@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SKILLS_DIR="$HOME/.claude/skills/uprate"
+COMMANDS_DIR="$HOME/.claude/commands/uprate"
 AGENTS_DIR="$HOME/.claude/agents"
 
 echo "Uninstalling Uprate Skills..."
 
-# Remove skill files
-if [ -d "$SKILLS_DIR" ]; then
-    rm -rf "$SKILLS_DIR"
-    echo "Removed skills directory"
+# Remove command files
+if [ -d "$COMMANDS_DIR" ]; then
+    rm -rf "$COMMANDS_DIR"
+    echo "Removed commands directory"
 fi
 
 # Remove agent files

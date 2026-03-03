@@ -46,7 +46,7 @@ curl -s https://uprate.app/api/cli/styles
 
 Parse the JSON response. Present styles to the user via AskUserQuestion. Each style should be an option with its name as the label and a short description.
 
-If the API call fails, use the styles from `~/.claude/skills/uprate/references/icon-styles.md` as fallback and note that the exact style IDs will be needed later.
+If the API call fails, use the styles from `~/.claude/commands/uprate/references/icon-styles.md` as fallback and note that the exact style IDs will be needed later.
 
 ### Step 3: Generate Icon Ideas
 

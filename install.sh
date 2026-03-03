@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO_URL="https://github.com/uprate-app/uprate-skills"
-SKILLS_DIR="$HOME/.claude/skills"
+COMMANDS_DIR="$HOME/.claude/commands"
 AGENTS_DIR="$HOME/.claude/agents"
 TMP_DIR=$(mktemp -d)
 
@@ -21,17 +21,17 @@ else
 fi
 
 # Create target directories
-mkdir -p "$SKILLS_DIR/uprate"
+mkdir -p "$COMMANDS_DIR/uprate"
 mkdir -p "$AGENTS_DIR"
 
-# Copy skill files
-cp -r "$TMP_DIR/uprate-skills/skills/uprate/"* "$SKILLS_DIR/uprate/"
+# Copy command files (slash commands)
+cp -r "$TMP_DIR/uprate-skills/skills/uprate/"* "$COMMANDS_DIR/uprate/"
 cp -r "$TMP_DIR/uprate-skills/agents/"* "$AGENTS_DIR/"
 
-# Copy references if they exist
+# Copy references
 if [ -d "$TMP_DIR/uprate-skills/references" ]; then
-    mkdir -p "$SKILLS_DIR/uprate/references"
-    cp -r "$TMP_DIR/uprate-skills/references/"* "$SKILLS_DIR/uprate/references/"
+    mkdir -p "$COMMANDS_DIR/uprate/references"
+    cp -r "$TMP_DIR/uprate-skills/references/"* "$COMMANDS_DIR/uprate/references/"
 fi
 
 echo ""
