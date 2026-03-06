@@ -120,16 +120,23 @@ If the response is 429, tell the user they've reached their monthly limit and su
 
 ### Step 6: Show the Result
 
-Parse the response for `view_url` and `request_id`.
+Parse the response for `request_id` (UUID), and also read `view_url` if the API already returns it.
+
+Build the final preview link like this:
+
+1. If `view_url` exists in the response, use it.
+2. If `view_url` is missing but `request_id` exists, build: `https://uprate.app/icons/new/{request_id}`.
+3. If neither exists, show an error and ask the user to retry generation.
 
 Show the user:
 
 ```
-Your icon is generating! It will be ready in about 30 seconds.
+Your icon is generating! It should be ready in about 30 seconds.
 
-View it here: {view_url}
+Preview it here: {preview_url}
 
-💡 Sign in or create a free Uprate account at that link to save this icon to your library.
+You can preview without an account.
+Want to save this icon to your account or download it? Sign in or create a free account from that page.
 ```
 
 Done! Do not proceed with any additional steps unless the user asks.

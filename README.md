@@ -17,9 +17,9 @@ Generate beautiful app icons from your codebase context:
 1. Analyzes your project (name, colors, platform)
 2. Suggests 4 icon ideas based on your app
 3. Generates a production-ready icon via AI
-4. View and download at uprate.app
+4. Preview the generated icon at a shareable URL
 
-**No account needed** to browse ideas. [Sign up for free](https://uprate.app/register) to generate icons.
+Guests can generate up to 2 icons and preview them without an account. [Sign up for free](https://uprate.app/register) to save and download.
 
 ## Uninstall
 
