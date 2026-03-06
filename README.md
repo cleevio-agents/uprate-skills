@@ -5,7 +5,7 @@ AI-powered tools for mobile app developers, right in your terminal.
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/uprate-app/uprate-skills/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/cleevio-agents/uprate-skills/main/install.sh | bash
 ```
 
 ## Available Skills
@@ -24,7 +24,7 @@ Guests can generate up to 2 icons and preview them without an account. [Sign up 
 ## Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/uprate-app/uprate-skills/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/cleevio-agents/uprate-skills/main/uninstall.sh | bash
 ```
 
 ## Requirements
@@ -34,4 +34,4 @@ curl -fsSL https://raw.githubusercontent.com/uprate-app/uprate-skills/main/unins
 ## Links
 
 - [Uprate](https://uprate.app) — AI-powered app review management
-- [Report an issue](https://github.com/uprate-app/uprate-skills/issues)
+- [Report an issue](https://github.com/cleevio-agents/uprate-skills/issues)
