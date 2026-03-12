@@ -1,8 +1,6 @@
 <p align="center">
-  <a href="https://upratehq.com">
-    <img src="assets/logo.svg#gh-light-mode-only" alt="Uprate" width="260" height="58" />
-    <img src="assets/logo-dark.svg#gh-dark-mode-only" alt="Uprate" width="260" height="58" />
-  </a>
+  <a href="https://upratehq.com"><img src="assets/logo.svg#gh-light-mode-only" alt="Uprate" width="260" height="58" /></a>
+  <a href="https://upratehq.com"><img src="assets/logo-dark.svg#gh-dark-mode-only" alt="Uprate" width="260" height="58" /></a>
 </p>
 
 <p align="center">
