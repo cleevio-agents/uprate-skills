@@ -35,6 +35,17 @@ Generate a production-ready app icon from your codebase context:
 
 Guests can generate up to 2 icons without an account. [Sign up free](https://app.upratehq.com/register) to save and download.
 
+### `/uprate generate-privacy-policy` — Privacy Policy Generator
+
+Generate a ready-to-publish privacy policy from your codebase context:
+
+1. Scans your project for data collection practices and third-party SDKs
+2. Asks targeted questions about your business and jurisdiction
+3. Generates a plain-language privacy policy tailored to your app
+4. Saves or displays the result — ready for App Store or Google Play
+
+Works entirely offline — no external API calls required.
+
 ## Uninstall
 
 ```bash
