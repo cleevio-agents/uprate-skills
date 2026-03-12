@@ -19,7 +19,7 @@ Generate beautiful app icons from your codebase context:
 3. Generates a production-ready icon via AI
 4. Preview the generated icon at a shareable URL
 
-Guests can generate up to 2 icons and preview them without an account. [Sign up for free](https://uprate.app/register) to save and download.
+Guests can generate up to 2 icons and preview them without an account. [Sign up for free]([https://upratehq.com/register](https://app.upratehq.com/register)) to save and download.
 
 ## Uninstall
 
@@ -33,5 +33,5 @@ curl -fsSL https://raw.githubusercontent.com/cleevio-agents/uprate-skills/main/u
 
 ## Links
 
-- [Uprate](https://uprate.app) — AI-powered app review management
+- [Uprate](https://upratehq.com) — AI-powered app review management
 - [Report an issue](https://github.com/cleevio-agents/uprate-skills/issues)
