@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="assets/logo.svg#gh-light-mode-only" alt="Uprate" width="260" height="58" />
-  <img src="assets/logo-dark.svg#gh-dark-mode-only" alt="Uprate" width="260" height="58" />
+  <a href="https://upratehq.com">
+    <img src="assets/logo.svg#gh-light-mode-only" alt="Uprate" width="260" height="58" />
+    <img src="assets/logo-dark.svg#gh-dark-mode-only" alt="Uprate" width="260" height="58" />
+  </a>
 </p>
 
 <p align="center">
@@ -38,4 +40,8 @@ curl -fsSL https://raw.githubusercontent.com/cleevio-agents/uprate-skills/main/u
 
 ---
 
-[Uprate](https://upratehq.com) · [Report an issue](https://github.com/cleevio-agents/uprate-skills/issues)
+<p align="center">
+  <a href="https://upratehq.com">Uprate</a> ·
+  <a href="https://github.com/cleevio-agents/uprate-skills/issues">Report an issue</a> ·
+  <a href="LICENSE">MIT License</a>
+</p>
