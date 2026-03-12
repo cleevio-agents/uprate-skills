@@ -35,6 +35,17 @@ Generate a production-ready app icon from your codebase context:
 
 Guests can generate up to 2 icons without an account. [Sign up free](https://app.upratehq.com/register) to save and download.
 
+### `/uprate generate-terms-of-service` — Terms of Service Generator ✦
+
+Generate a customized Terms of Service for your mobile app:
+
+1. Analyzes your project — platform, payments, accounts, content
+2. Asks clarifying questions about your app and business
+3. Generates a plain-language Terms of Service as markdown
+4. Saves the document to your project directory
+
+No external APIs — works entirely from local codebase analysis and your input.
+
 ## Uninstall
 
 ```bash
