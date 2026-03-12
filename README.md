@@ -1,3 +1,5 @@
+<img src="assets/logo.svg" alt="Uprate" width="130" />
+
 # Uprate Skills for Claude Code
 
 AI-powered tools for mobile app developers, right in your terminal.
