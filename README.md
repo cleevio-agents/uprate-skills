@@ -35,6 +35,15 @@ Generate a production-ready app icon from your codebase context:
 
 Guests can generate up to 2 icons without an account. [Sign up free](https://app.upratehq.com/register) to save and download.
 
+### `/uprate launch-producthunt` — Product Hunt Launch ✦
+
+Prepare your Product Hunt submission without leaving the terminal:
+
+1. Analyzes your project — name, description, category
+2. Asks targeted questions about your goals and audience
+3. Generates all copy: tagline, description, topics, maker comment, first comment
+4. Provides a launch-day checklist and optionally saves everything to a file
+
 ## Uninstall
 
 ```bash
