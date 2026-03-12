@@ -1,5 +1,7 @@
-<img src="assets/logo.svg#gh-light-mode-only" alt="Uprate" width="130" height="29" />
-<img src="assets/logo-dark.svg#gh-dark-mode-only" alt="Uprate" width="130" height="29" />
+<p align="center">
+  <img src="assets/logo.svg#gh-light-mode-only" alt="Uprate" width="260" height="58" />
+  <img src="assets/logo-dark.svg#gh-dark-mode-only" alt="Uprate" width="260" height="58" />
+</p>
 
 # Uprate Skills for Claude Code
 
