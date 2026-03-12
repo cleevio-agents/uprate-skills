@@ -3,28 +3,32 @@
   <img src="assets/logo-dark.svg#gh-dark-mode-only" alt="Uprate" width="260" height="58" />
 </p>
 
-# Uprate Skills for Claude Code
+<p align="center">
+  AI-powered tools for mobile app developers, right in your terminal.
+</p>
 
-AI-powered tools for mobile app developers, right in your terminal.
+---
 
 ## Install
+
+Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/cleevio-agents/uprate-skills/main/install.sh | bash
 ```
 
-## Available Skills
+## Skills
 
-### `/uprate generate-icon` — AI Icon Generator
+### `/uprate generate-icon` — Icon Generator ✦
 
-Generate beautiful app icons from your codebase context:
+Generate a production-ready app icon from your codebase context:
 
-1. Analyzes your project (name, colors, platform)
-2. Suggests 4 icon ideas based on your app
-3. Generates a production-ready icon via AI
-4. Preview the generated icon at a shareable URL
+1. Analyzes your project — name, colors, platform
+2. Proposes 4 icon concepts tailored to your app
+3. Generates a high-quality icon via AI
+4. Returns a shareable preview URL
 
-Guests can generate up to 2 icons and preview them without an account. [Sign up for free]([https://upratehq.com/register](https://app.upratehq.com/register)) to save and download.
+Guests can generate up to 2 icons without an account. [Sign up free](https://app.upratehq.com/register) to save and download.
 
 ## Uninstall
 
@@ -32,11 +36,6 @@ Guests can generate up to 2 icons and preview them without an account. [Sign up 
 curl -fsSL https://raw.githubusercontent.com/cleevio-agents/uprate-skills/main/uninstall.sh | bash
 ```
 
-## Requirements
+---
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI installed
-
-## Links
-
-- [Uprate](https://upratehq.com) — AI-powered app review management
-- [Report an issue](https://github.com/cleevio-agents/uprate-skills/issues)
+[Uprate](https://upratehq.com) · [Report an issue](https://github.com/cleevio-agents/uprate-skills/issues)
