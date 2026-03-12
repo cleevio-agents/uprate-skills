@@ -13,10 +13,10 @@ if [ -d "$COMMANDS_DIR" ]; then
 fi
 
 # Remove agent files
-for agent in uprate-codebase-analyzer.md; do
-    if [ -f "$AGENTS_DIR/$agent" ]; then
-        rm "$AGENTS_DIR/$agent"
-        echo "Removed $agent"
+for agent in "$AGENTS_DIR"/uprate-*.md; do
+    if [ -f "$agent" ]; then
+        rm "$agent"
+        echo "Removed $(basename "$agent")"
     fi
 done
 
