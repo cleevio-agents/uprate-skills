@@ -25,7 +25,7 @@ mkdir -p "$COMMANDS_DIR/uprate"
 mkdir -p "$AGENTS_DIR"
 
 # Copy command files (slash commands)
-cp -r "$TMP_DIR/uprate-skills/skills/uprate/"* "$COMMANDS_DIR/uprate/"
+cp -r "$TMP_DIR/uprate-skills/skills/"* "$COMMANDS_DIR/uprate/"
 cp -r "$TMP_DIR/uprate-skills/agents/"* "$AGENTS_DIR/"
 
 # Copy references
