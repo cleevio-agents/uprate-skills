@@ -36,89 +36,72 @@ Does this look right?
 
 Use AskUserQuestion with options: "Looks correct" and "I want to adjust" (with Other option for custom input).
 
-### Step 2: Fetch Available Styles
+### Step 2: Prefetch Styles, Ideas, and Auth Token
 
-Run this command to get available styles:
+Spawn a general-purpose subagent with this exact prompt (substituting `<app_description>` with the actual description):
 
-```bash
-curl -s https://app.upratehq.com/api/cli/styles
+```
+Do the following tasks and return ALL results as a single JSON object. Do not stop early.
+
+1. Read auth config:
+   cat ~/.uprate/config.json 2>/dev/null || echo "{}"
+
+2. If neither "apiKey" nor "guestToken" exists in the config, create a guest session:
+   curl -s -X POST https://app.upratehq.com/api/cli/session \
+     -H "Content-Type: application/json" \
+     -H "Accept: application/json"
+   Save the token: mkdir -p ~/.uprate && echo '{"guestToken":"<token>"}' > ~/.uprate/config.json
+
+3. Fetch styles:
+   curl -s https://app.upratehq.com/api/cli/styles
+
+4. Fetch ideas (use the actual app description):
+   curl -s -X POST https://app.upratehq.com/api/cli/generate/ideas \
+     -H 'Content-Type: application/json' \
+     -d '{"description": "<app_description>"}'
+
+Return this JSON (fill in real values):
+{
+  "token": "<apiKey or guestToken value>",
+  "styles": [<styles array from API, or [] on failure>],
+  "ideas": [<ideas array from API, or [] on failure>]
+}
 ```
 
-Parse the JSON response. Present styles to the user via AskUserQuestion. Each style should be an option with its name as the label and a short description.
+Parse the subagent's JSON output to get `token`, `styles`, and `ideas`.
 
-If the API call fails, use the styles from `~/.claude/commands/uprate/references/icon-styles.md` as fallback and note that the exact style IDs will be needed later.
+- If `styles` is empty, load styles from the `uprate:references:icon-styles` skill as fallback.
+- If `ideas` is empty, ask the user to describe what they want the icon to look like.
 
-### Step 3: Generate Icon Ideas
+Present styles to the user via AskUserQuestion. Each style should be an option with its name as the label and a short description.
 
-Run this command with the app description:
+Present ideas to the user via AskUserQuestion with each idea as an option. The user can also write their own via the "Other" option.
 
-```bash
-curl -s -X POST https://app.upratehq.com/api/cli/generate/ideas \
-  -H 'Content-Type: application/json' \
-  -d '{"description": "<app_description>"}'
+### Step 3: Generate the Icon
+
+Spawn a general-purpose subagent with this exact prompt (substituting all `<placeholders>` with real values):
+
 ```
+Submit this icon generation request and return the full JSON response body:
 
-Parse the `ideas` array from the response. Present them to the user via AskUserQuestion with each idea as an option. The user can also write their own via the "Other" option.
-
-### Step 4: Get Access Token
-
-Check `~/.uprate/config.json` for an existing token:
-
-```bash
-cat ~/.uprate/config.json 2>/dev/null || echo "{}"
-```
-
-**If `apiKey` is present** — use it as the Bearer token. Skip to Step 5.
-
-**If `guestToken` is present** — use it as the Bearer token. Skip to Step 5.
-
-**If neither exists** — create a guest session automatically:
-
-```bash
-RESPONSE=$(curl -s -X POST https://app.upratehq.com/api/cli/session \
-  -H "Content-Type: application/json" \
-  -H "Accept: application/json")
-
-TOKEN=$(echo "$RESPONSE" | grep -o '"token":"[^"]*"' | cut -d'"' -f4)
-
-if [ -z "$TOKEN" ]; then
-  echo "Could not connect to Uprate. Please check your internet connection and try again."
-  exit 1
-fi
-
-mkdir -p ~/.uprate
-echo "{\"guestToken\": \"$TOKEN\"}" > ~/.uprate/config.json
-```
-
-Use `$TOKEN` as the Bearer token for Step 5.
-
-### Step 5: Generate the Icon
-
-Read the API key from config:
-
-```bash
-cat ~/.uprate/config.json
-```
-
-Submit the generation request:
-
-```bash
 curl -s -X POST https://app.upratehq.com/api/cli/generate \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer <api_key>' \
+  -H 'Authorization: Bearer <token>' \
   -d '{
     "app_description": "<app_description>",
     "icon_description": "<chosen_idea>",
     "style_id": "<style_uuid>",
-    "colors": [<hex_colors>]
+    "colors": [<hex_colors_as_quoted_strings>]
   }'
+
+Return the full JSON response exactly as received.
 ```
 
-If the response is 401, tell the user their API key is invalid and ask them to create a new one (go back to Step 4).
+Parse the subagent's response:
+- If HTTP 401: tell the user their API key is invalid and ask them to create a new one at https://app.upratehq.com/settings
+- If HTTP 429: tell the user they've reached their monthly limit and suggest upgrading at https://app.upratehq.com/settings/billing
 
-If the response is 429, tell the user they've reached their monthly limit and suggest upgrading at https://app.upratehq.com/settings/billing.
-
-### Step 6: Show the Result
+### Step 4: Show the Result
 
 Parse the response for `request_id` (UUID), and also read `view_url` if the API already returns it.
 
